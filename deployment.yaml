@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo-app
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: demo-app
+        version: blue
+    spec:
+      containers:
+        - name: demo
+          image: nginxdemos/hello:plain-text
+          ports:
+            - containerPort: 80
