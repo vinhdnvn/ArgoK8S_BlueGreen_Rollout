@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         app: demo-app
-        version: red
+        version: green
     spec:
       containers:
         - name: demo
